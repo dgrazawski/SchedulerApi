@@ -20,6 +20,9 @@ def create_app(config_class=Config):
     from app.routes.subject_routes import subject_bp
     from app.routes.meeting_routes import meeting_bp
     from app.routes.group_routes import group_bp
+    from app.routes.allocation_routes import allocation_bp
+    from app.routes.cyclic_tile_route import cyclic_tile_bp
+    from app.routes.non_cyclic_tile_route import non_cyclic_tile_bp
     app.register_blueprint(account_bp, url_prefix='/account')
     app.register_blueprint(schedule_bp, url_prefix='/schedule')
     app.register_blueprint(lecturer_bp, url_prefix='/lecturer')
@@ -27,5 +30,8 @@ def create_app(config_class=Config):
     app.register_blueprint(subject_bp, url_prefix='/subject')
     app.register_blueprint(meeting_bp, url_prefix='/meeting')
     app.register_blueprint(group_bp, url_prefix='/group')
+    app.register_blueprint(allocation_bp, url_prefix='/allocation')
+    app.register_blueprint(cyclic_tile_bp, url_prefix='/cyclic')
+    app.register_blueprint(non_cyclic_tile_bp, url_prefix='/non_cyclic')
 
     return app
