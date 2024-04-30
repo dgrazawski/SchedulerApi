@@ -23,6 +23,7 @@ def create_app(config_class=Config):
     from app.routes.allocation_routes import allocation_bp
     from app.routes.cyclic_tile_route import cyclic_tile_bp
     from app.routes.non_cyclic_tile_route import non_cyclic_tile_bp
+    from app.routes.client_routes import client_bp
     app.register_blueprint(account_bp, url_prefix='/account')
     app.register_blueprint(schedule_bp, url_prefix='/schedule')
     app.register_blueprint(lecturer_bp, url_prefix='/lecturer')
@@ -33,5 +34,6 @@ def create_app(config_class=Config):
     app.register_blueprint(allocation_bp, url_prefix='/allocation')
     app.register_blueprint(cyclic_tile_bp, url_prefix='/cyclic')
     app.register_blueprint(non_cyclic_tile_bp, url_prefix='/non_cyclic')
+    app.register_blueprint(client_bp, url_prefix='/client')
 
     return app

@@ -24,7 +24,7 @@ def register():
     return jsonify({"message": "User registered"}), 201
 
 ########################################################################
-@account_bp.route('/login', methods=['GET'])
+@account_bp.route('/login', methods=['POST'])
 def login():
     if not request.is_json:
         return jsonify({"message": "Missing JSON in request"}), 400
